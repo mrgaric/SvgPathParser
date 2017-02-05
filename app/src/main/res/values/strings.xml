@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SvgPathParser</string>
+    <string name="ready">Готово</string>
+    <string name="labelText">SVG</string>
+</resources>
