@@ -27,7 +27,8 @@ public class SvgView extends View {
       //  paint.setStyle(Paint.Style.FILL_AND_STROKE);
       //  String test = "M200,200A100,50,0,0,0,400,400";
       //  String test = "M58.375,259.344v-76h526v-66.667h114.667v66.667h194v76h9.333v98.667h-9.333v72H58.375v-72H45.708v-98.667H58.375z";
-      //  parseStrSvg(test);
+        String test = "M248.761,92c0,9.801,-7.93,17.731,-17.71,17.731c-0.319,0,-0.617,0,-0.935,-0.021c-10.035,37.291,-51.174,65.206,-100.414,65.206c-49.261,0,-90.443,-27.979,-100.435,-65.334c-0.765,0.106,-1.531,0.149,-2.317,0.149c-9.78,0,-17.71,-7.93,-17.71,-17.731c0,-9.78,7.93,-17.71,17.71,-17.71c0.787,0,1.552,0.042,2.317,0.149C39.238,37.084,80.419,9.083,129.702,9.083c49.24,0,90.379,27.937,100.414,65.228h0.021c0.298,-0.021,0.617,-0.021,0.914,-0.021C240.831,74.29,248.761,82.22,248.761,92z";
+        parseStrSvg(test);
     }
 
     @Override
@@ -170,9 +171,9 @@ public class SvgView extends View {
                     x1 = currentPointX + Float.valueOf(itemSvgStr.get(countItemSvgStr++));
                     y1 = currentPointY + Float.valueOf(itemSvgStr.get(countItemSvgStr++));
                     x2 = currentPointX + Float.valueOf(itemSvgStr.get(countItemSvgStr++));
-                    y2 = currentPointX + Float.valueOf(itemSvgStr.get(countItemSvgStr++));
+                    y2 = currentPointY + Float.valueOf(itemSvgStr.get(countItemSvgStr++));
                     x3 = currentPointX + Float.valueOf(itemSvgStr.get(countItemSvgStr++));
-                    y3 = currentPointX + Float.valueOf(itemSvgStr.get(countItemSvgStr++));
+                    y3 = currentPointY + Float.valueOf(itemSvgStr.get(countItemSvgStr++));
                     currentPointX = x3;
                     currentPointY = y3;
                     intermediatePointX = x2;
@@ -196,9 +197,9 @@ public class SvgView extends View {
                     x1 = currentPointX + (currentPointX - intermediatePointX);
                     y1 = currentPointY + (currentPointY - intermediatePointY);
                     x2 = currentPointX + Float.valueOf(itemSvgStr.get(countItemSvgStr++));
-                    y2 = currentPointX + Float.valueOf(itemSvgStr.get(countItemSvgStr++));
+                    y2 = currentPointY + Float.valueOf(itemSvgStr.get(countItemSvgStr++));
                     x3 = currentPointX + Float.valueOf(itemSvgStr.get(countItemSvgStr++));
-                    y3 = currentPointX + Float.valueOf(itemSvgStr.get(countItemSvgStr++));
+                    y3 = currentPointY + Float.valueOf(itemSvgStr.get(countItemSvgStr++));
                     currentPointX = x3;
                     currentPointY = y3;
                     intermediatePointX = x2;
@@ -220,7 +221,7 @@ public class SvgView extends View {
                     x1 = currentPointX + Float.valueOf(itemSvgStr.get(countItemSvgStr++));
                     y1 = currentPointY + Float.valueOf(itemSvgStr.get(countItemSvgStr++));
                     x2 = currentPointX + Float.valueOf(itemSvgStr.get(countItemSvgStr++));
-                    y2 = currentPointX + Float.valueOf(itemSvgStr.get(countItemSvgStr++));
+                    y2 = currentPointY + Float.valueOf(itemSvgStr.get(countItemSvgStr++));
                     currentPointX = x2;
                     currentPointY = y2;
                     intermediatePointX = x1;
