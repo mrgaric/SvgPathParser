@@ -23,6 +23,7 @@ public class SvgView extends View {
         paint = new Paint();
         paint.setStrokeWidth(3);
         countColor = Color.RED;
+        paint.setColor(countColor);
       //  paint.setStyle(Paint.Style.STROKE);
       //  paint.setStyle(Paint.Style.FILL_AND_STROKE);
       //  String test = "M200,200A100,50,0,0,0,400,400";
@@ -34,10 +35,13 @@ public class SvgView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        canvas.drawPath(path, paint);
+    }
+
+    public void updateColor(){
         countColor = paint.getColor() - 100000;
         if (countColor <= -16777216) countColor = Color.RED;
         paint.setColor(countColor);
-        canvas.drawPath(path, paint);
     }
 
     public void parseStrSvg(String strSvg) throws Exception {

@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         svgView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((SvgView)view).updateColor();
                 view.invalidate();
             }
         });
