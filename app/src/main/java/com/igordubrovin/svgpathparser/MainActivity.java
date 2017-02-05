@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     SvgView svgView;
     Button btnReady;
     EditText etSvgStr;
+    String strSvg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,8 +30,9 @@ public class MainActivity extends AppCompatActivity {
         btnReady.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                strSvg = etSvgStr.getText().toString();
                 try{
-                    svgView.parseStrSvg(etSvgStr.getText().toString());
+                    svgView.parseStrSvg(strSvg);
                     svgView.invalidate();
                 }
                 catch (Exception e){
@@ -38,5 +40,25 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("strSvg",strSvg);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if (savedInstanceState != null) {
+            strSvg = savedInstanceState.getString("strSvg");
+            try {
+                svgView.parseStrSvg(strSvg);
+                svgView.invalidate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
